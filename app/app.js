@@ -14,9 +14,9 @@ angular.module('calendarDemoApp', [])
 						 'May', 'June', 'July', 'August',
 						 'September', 'October', 'November', 'December'];
 
-		var years = [];
-		var priorYears = year - 20;
-		for(i=priorYears; i<=year+20; i++){
+		var years = [];				 
+		var yearsPrior = year - 20;
+		for(i=yearsPrior; i<=year+20; i++){
 			years.push(i);
 		}
 		$scope.years = years;

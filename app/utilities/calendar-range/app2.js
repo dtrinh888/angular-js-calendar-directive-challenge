@@ -30,9 +30,9 @@ angular.module('calendarDemoApp', [])
 		//for loop explanation:
 		//i is set to years prior; 
 		//if i is less than or = to current year + 20;
-		//then increment i
-		for (i=yearsPrior; i<=year+20; i++){
-			//if for loop passes then push all the years into years array
+		//then increment i until i is less than or = to year+20
+		for (var i=yearsPrior; i<=year+20; i++){
+			//if for loop is true then push all the years into years array
 			years.push(i);
 		}
 
@@ -45,15 +45,24 @@ angular.module('calendarDemoApp', [])
 		//pass in newDate whenever the 'date' is changed
 		$scope.$watch('date', function(newDate){
 			console.log('newDate', newDate);
-			//taken from calendarRange.js to retrieve the range of days
-			//in each monthly range to show how many days per month to show
-			//on calendar. 
+			//CalendarRange.getMonthlyRange() function was provided, found in calendarRange.js,
+			//will generate the days that should be displayed for any given month.
+			//The function gets called with a JS date object (var range = CalendarRange.getMonthlyRange(new Date());)
+			//
+			//need a little more explanation with Date(newDate.year, newDate.month, 1)
+			//
 			var range = CalendarRange.getMonthlyRange(new Date(newDate.year, newDate.month, 1));
 			console.log('range', range);
-			//
+			//totalWeeks store how many weeks will be displayed every month
 			var totalWeeks = range.days.length / 7;
+			//set empty array to store all the how many weeks for each month
 			var weeks = [];
+			//for loop explanation:
+			//set i to 0;
+			//if totalWeeks is greater than i;
+			//then increment i until totalWeeks is no longer greater than i
 			for(var i = 0; totalWeeks > i; i++){
+				//if for loop is true
 				weeks[i] = [];
 				for(var j = 0; j < 7; j++) {
 					console.log('days', j+(i*7));

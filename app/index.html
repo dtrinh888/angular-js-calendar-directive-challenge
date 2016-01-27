@@ -8,7 +8,7 @@
 <body ng-controller="MonthCtrl">
 	<nav class="nav">
 		<select ng-model="date.month">
-			<option ng-repeat="month in months" value="$index" ng-selected="date.month == $index">{{month}}</option>
+			<option ng-repeat="month in months" value="{{ $index }}" ng-selected="date.month == $index">{{month}}</option>
 		</select>
 		<select ng-model="date.year">
 			<option ng-repeat="year in years" value="{{ year }}" ng-selected="date.year == year">{{year}}</option>

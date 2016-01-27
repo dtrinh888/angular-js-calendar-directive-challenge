@@ -8,10 +8,20 @@
 
 <!-- your code for nav and calendar directive instance here -->
 <nav>
+	<!-- ng-model is need so that it can bind the view into the model 
+		 which is required directives such as input, textarea or select -->
 	<select ng-model="date.month">
+		<!-- ng-repeat="month in months" is used to loop through months array -->
+		<!-- value="{{ $index }}" is used to point at repeated element (first element of array) -->
+		<!-- ng-selected="date.month == $index" current month (date.month) is set to $index as the selected element -->
 		<option ng-repeat="month in months" value="{{ $index }}" ng-selected="date.month == $index">{{ month }}</option>
 	</select>
+	<!-- ng-model is need so that it can bind the view into the model 
+		 which is required directives such as input, textarea or select -->
 	<select ng-model="date.year">
+		<!-- ng-repeat="year in years" is used to loop through years array -->
+		<!-- value="{{ year }}" is used to set the value to current year -->
+		<!-- ng-selected="date.year == year" set current year to year as selected element -->
 		<option ng-repeat="year in years" value="{{ year }}" ng-selected="date.year == year">{{ year }}</option>
 	</select>
 </nav>
