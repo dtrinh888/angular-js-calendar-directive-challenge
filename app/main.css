@@ -1,1 +1,14 @@
 /* your css code goes here */
+nav {
+	background-color: black;
+	height: 50px;
+	width: 100%;
+}
+table {
+	width: 100%;
+}
+td {
+	height: 100px;
+	border: 1px solid black;
+	text-align: center
+}

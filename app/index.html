@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html ng-app="calendarDemoApp">
+<html lang="en" ng-app="calendarDemoApp">
 <head>
-<title>Calendar Directive Challenge</title>
-<link rel="stylesheet" type="text/css" href="./main.css" />
+	<meta charset="UTF-8">
+	<title>Calendar App</title>
+	<link rel="stylesheet" type="text/css" href="./main.css">
 </head>
-<body>
+<body ng-controller="MonthCtrl">
+	<nav class="nav">
+		<select>
+			<option></option>
+		</select>
+		<select>
+			<option></option>
+		</select>
+	</nav>
 
-<!-- your code for nav and calendar directive instance here -->
-
-<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="./app/utilities/calendar_range/calendarRange.js"></script>
+	<script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

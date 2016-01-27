@@ -3,6 +3,7 @@ var CalendarRange = {
   DAY : 24 * 60 * 60 * 1000,
 
   prepareDate : function(date) {
+
     date = new Date(date);
     var day = date.getDay();
     return {
@@ -15,6 +16,7 @@ var CalendarRange = {
   },
 
   getMonthlyRange : function(date) {
+    console.log(date);    
     var month = date.getMonth();
     var startDay = new Date(date);
     startDay.setDate(1);
