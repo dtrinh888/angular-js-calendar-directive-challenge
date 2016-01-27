@@ -7,11 +7,11 @@
 </head>
 <body ng-controller="MonthCtrl">
 	<nav class="nav">
-		<select>
-			<option ng-repeat="month in months" value="month" ng-selected="date.month == month">{{month}}</option>
+		<select ng-model="date.month">
+			<option ng-repeat="month in months" value="$index" ng-selected="date.month == $index">{{month}}</option>
 		</select>
-		<select>
-			<option></option>
+		<select ng-model="date.year">
+			<option ng-repeat="year in years" value="{{ year }}" ng-selected="date.year == year">{{year}}</option>
 		</select>
 	</nav>
 
