@@ -12,3 +12,13 @@ td {
 	border: 1px solid black;
 	text-align: center
 }
+
+.weekend{
+	color: red;
+	font-weight: bold;
+	background-color: yellow;
+}
+
+.weekday {
+	background-color: #FDFDFD !important;
+}

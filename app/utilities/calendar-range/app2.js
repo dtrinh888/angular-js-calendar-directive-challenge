@@ -51,7 +51,7 @@ angular.module('calendarDemoApp', [])
 			//
 			//what is the 1 for???
 			//
-			var range = CalendarRange.getMonthlyRange(new Date(newDate.year, newDate.month, 1));
+			var range = CalendarRange.getMonthlyRange(new Date(newDate.month, newDate.year, 1));
 			console.log('range', range);
 			//totalWeeks store how many weeks will be displayed on calendar for each month
 			var totalWeeks = range.days.length / 7;
@@ -61,12 +61,17 @@ angular.module('calendarDemoApp', [])
 			//set i to 0;
 			//if totalWeeks is greater than i;
 			//then increment i until totalWeeks is no longer greater than i
-			for(var i = 0; totalWeeks > i; i++){
-				//if for loop is true
+			for(i=0; i<totalWeeks; i++){
+				//i stores how many weeks are in each month
+				//then empty array will store what and how many days each week has
 				weeks[i] = [];
-				for(var j = 0; j < 7; j++) {
+				console.log('weeks', weeks);
+				console.log('totalWeeks', totalWeeks);
+				for(j=0; j<7; j++){
+					console.log('j',j);
 					console.log('days', j+(i*7));
 					weeks[i].push(range.days[j+(i*7)]);
+					console.log('wtf', weeks[i]);
 				}
 			}
 			$scope.weeks = weeks;

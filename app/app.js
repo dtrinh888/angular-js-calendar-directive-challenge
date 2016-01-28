@@ -32,13 +32,14 @@ angular.module('calendarDemoApp', [])
 				console.log('weeks', weeks);
 				console.log('totalWeeks', totalWeeks);
 				for(j=0; j<7; j++){
-					console.log('totaldays', j+(i*7));
+
+					console.log('days', j+(i*7));
 					weeks[i].push(range.days[j+(i*7)]);
+					console.log('j',j);
 					console.log('wtf', weeks[i]);
 				}
 			}
 			$scope.weeks = weeks;
-			console.log($scope.weeks);
 		}, true);
 	})
 	.directive('calNav', function(){

@@ -1,5 +1,5 @@
 <table>
 	<tr ng-repeat="week in weeks">
-		<td ng-repeat="day in week">{{ day.day }}</td>
+		<td ng-repeat="day in week" ng-class="{weekend: !day.weekday, weekday: day.weekday}">{{ day.day }}</td>
 	</tr>
 </table>
