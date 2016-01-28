@@ -40,20 +40,20 @@ angular.module('calendarDemoApp', [])
 		$scope.years = years;	
 		console.log('$scope.years' ,$scope.years);	
 
-		//watch $scope.date to execute a callback whenever
-		//'date' changes ('date' is $scope.date)
-		//pass in newDate whenever the 'date' is changed
+		//$scope.$watch watches $scope.date('date') and retrieves all information 
+		//({month:month, year:year}) and passes into newDate
 		$scope.$watch('date', function(newDate){
 			console.log('newDate', newDate);
 			//CalendarRange.getMonthlyRange() function was provided, found in calendarRange.js,
 			//will generate the days that should be displayed for any given month.
 			//The function gets called with a JS date object (var range = CalendarRange.getMonthlyRange(new Date());)
+			//create new Date and pass in the current year and current month
 			//
-			//need a little more explanation with Date(newDate.year, newDate.month, 1)
+			//what is the 1 for???
 			//
 			var range = CalendarRange.getMonthlyRange(new Date(newDate.year, newDate.month, 1));
 			console.log('range', range);
-			//totalWeeks store how many weeks will be displayed every month
+			//totalWeeks store how many weeks will be displayed on calendar for each month
 			var totalWeeks = range.days.length / 7;
 			//set empty array to store all the how many weeks for each month
 			var weeks = [];

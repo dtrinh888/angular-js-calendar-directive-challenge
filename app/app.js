@@ -20,4 +20,32 @@ angular.module('calendarDemoApp', [])
 			years.push(i);
 		}
 		$scope.years = years;
+
+		$scope.$watch('date', function(newDate){
+			console.log('newdate', newDate);
+			var range = CalendarRange.getMonthlyRange(new Date(newDate.year, newDate.month, 1));
+			console.log('range',range);
+			var totalWeeks = range.days.length/7;			
+			var weeks = [];
+			for(i=0; i<totalWeeks; i++){
+				weeks[i] = [];
+				console.log('weeks', weeks);
+				console.log('totalWeeks', totalWeeks);
+				for(j=0; j<7; j++){
+					console.log('totaldays', j+(i*7));
+					weeks[i].push(range.days[j+(i*7)]);
+					console.log('wtf', weeks[i]);
+				}
+			}
+			$scope.weeks = weeks;
+			console.log($scope.weeks);
+		}, true);
+	})
+	.directive('calNav', function(){
+		return {
+			restrict: 'E',
+			transclude: true,
+			scope: true,
+			templateUrl: './calNav.html'
+		};
 	});
