@@ -22,7 +22,7 @@ td {
 .weekend{
 	color: red;
 	font-weight: bold;
-	background-color: yellow;
+	background-color: beige;
 }
 
 .weekday {
@@ -30,9 +30,13 @@ td {
 }
 
 .bookend {
-	background-color: gray;
+	background-color: #D3D3D3;
 }
 
 .today {
-	background-color: blue;
+	background-color: yellow;
+}
+select {
+	margin-top: 25px;
+	margin-left: 3px;
 }
