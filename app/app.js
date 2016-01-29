@@ -10,6 +10,12 @@ angular.module('calendarDemoApp', [])
 			year: year
 		};
 
+		$scope.today = today.toDateString();
+		console.log('today', $scope.today);
+
+		$scope.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+						'Thursday', 'Friday', 'Saturday'];
+
 		$scope.months = ['January', 'February', 'March', 'April',
 						 'May', 'June', 'July', 'August',
 						 'September', 'October', 'November', 'December'];
@@ -32,11 +38,10 @@ angular.module('calendarDemoApp', [])
 				console.log('weeks', weeks);
 				console.log('totalWeeks', totalWeeks);
 				for(j=0; j<7; j++){
-
 					console.log('days', j+(i*7));
 					weeks[i].push(range.days[j+(i*7)]);
 					console.log('j',j);
-					console.log('wtf', weeks[i]);
+					console.log('weeks[i]', weeks[i]);
 				}
 			}
 			$scope.weeks = weeks;

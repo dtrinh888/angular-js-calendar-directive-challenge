@@ -48,9 +48,7 @@ angular.module('calendarDemoApp', [])
 			//will generate the days that should be displayed for any given month.
 			//The function gets called with a JS date object (var range = CalendarRange.getMonthlyRange(new Date());)
 			//create new Date and pass in the current year and current month
-			//
-			//what is the 1 for???
-			//
+			//1 is to default for the 1st of the month
 			var range = CalendarRange.getMonthlyRange(new Date(newDate.month, newDate.year, 1));
 			console.log('range', range);
 			//totalWeeks store how many weeks will be displayed on calendar for each month

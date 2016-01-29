@@ -3,22 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Calendar App</title>
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 <body ng-controller="MonthCtrl">
-	<nav class="nav">
-		<select ng-model="date.month">
-			<option ng-repeat="month in months" value="{{ $index }}" ng-selected="date.month == $index">{{month}}</option>
-		</select>
-		<select ng-model="date.year">
-			<option ng-repeat="year in years" value="{{ year }}" ng-selected="date.year == year">{{year}}</option>
-		</select>
-	</nav>
+	<div class="container">
+		<nav class="nav">
+			<select ng-model="date.month">
+				<option ng-repeat="month in months" value="{{ $index }}" ng-selected="date.month == $index">{{month}}</option>
+			</select>
+			<select ng-model="date.year">
+				<option ng-repeat="year in years" value="{{ year }}" ng-selected="date.year == year">{{year}}</option>
+			</select>
+		</nav>
 
-	<div>
-		<cal-nav></cal-nav>
+		<div>
+			<cal-nav></cal-nav>
+		</div>
 	</div>
-
 	<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
 	<script type="text/javascript" src="./app.js"></script>

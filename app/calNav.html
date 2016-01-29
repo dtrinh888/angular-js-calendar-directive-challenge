@@ -1,5 +1,8 @@
 <table>
+	<tr>
+		<th ng-repeat="day in days" class="text-center">{{ day }}</th>
+	</tr>
 	<tr ng-repeat="week in weeks">
-		<td ng-repeat="day in week" ng-class="{weekend: !day.weekday, weekday: day.weekday}">{{ day.day }}</td>
+		<td ng-repeat="day in week" ng-class="{bookend: date.month != day.month, weekend: !day.weekday, weekday: day.weekday, today: today === day.date.toDateString()}">{{ day.day }}</td>
 	</tr>
 </table>
